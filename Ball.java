@@ -1,7 +1,7 @@
 
 package finalproject;
 import java.awt.Color;
-public class Ball {
+public class Ball extends AbstractBall{
     Color ballColour;
     boolean striped;
     boolean onTable;
@@ -102,6 +102,12 @@ public class Ball {
     }
     public void setYPos(double y) {
         yPos = y;
+    }
+    public boolean isMoving() {
+        if (xSpeed > 0 || ySpeed > 0) {
+            return true;
+        }
+        return false;
     }
     public String toString() {
         return "Colour: " + ballColour + "\nStriped? " + striped + "\nOn table? " + onTable + "\nX velocity: " + (xDir * xSpeed) + "\nY Velocity: " + (yDir * ySpeed) + "\nPosition: (" + xPos + "," + yPos + ")";
